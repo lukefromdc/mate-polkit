@@ -202,6 +202,8 @@ update_temporary_authorization_icon_real (void)
 				    APP_INDICATOR_STATUS_PASSIVE);
           g_object_unref (app_indicator);
           app_indicator = NULL;
+          /*Quit and let respawn: nothing else seems to work*/
+          g_main_loop_quit (loop);
         }
 #else
       if (status_icon != NULL)
